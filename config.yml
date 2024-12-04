@@ -1,0 +1,23 @@
+# 库存列名
+ws_params_dict_inv: {
+    'ws_payer_code': 'W00013686',
+    'agg_col': '期初库存',                   # 需要多确认,每次有可能是期初，有可能是期末，不同数据逻辑不一样
+    'ws_id_name': '经销商代码',
+    'sku_name': '物料'
+}
+# stw 数据列名
+ws_params_dict: {
+    'ws_payer_code': 30018687,
+    'agg_col': 'stw_qty',
+    'month_col': 'billingyearmonth',
+    'ws_id_name': 'payercode',
+    'sku_name': 'skuname'
+}
+# str数据列名
+ws_params_dict_str: {
+    'ws_payer_code': 30018687,
+    'agg_col': 'str_qty',
+    'month_col': 'month',
+    'ws_id_name': 'payercode',
+    'sku_name': 'wccs_sku_name'
+}
