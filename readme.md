@@ -1,30 +1,23 @@
-数据：
-期初库存/期末库存 均为手工数据，期初库存的经销商代码为300开头，产品代码是P code
-经销商W码和300码转换关系 bcc_baseline_ods.wccs_ws
-skucode 和 Pcode 对应关系：wccs_ods.bas_material   
-目前期初库存数据表用的是期初库存字段（给的数据是2021年1月的）
-期末库存数据用的是期末库存，给的是202412月的
-
 问题：会有配不上百升数的SKU，也会有Pcode-sap code对应不上导致有些sku的期初库存就被忽略的问题
 
 ## 代码文件：
 ### fetch_data
 
 主要功能是取数
-core functions:
-1. skucode 对应的百升数 get_sku_hl_mapping_table
-2. skucode 和 Pcode 对应关系 get_sku_sap_wccs_code_mapping_table
-3. 经销商的名字和对应关系：budtech_brewdat_prod_ods.abi_cloud_wholesaler_ws_wholesaler
-4. 导入期初库存数据并且转换sku的百升数，filter需要的brand get_inv_data
-5. get_stw_data(start=202101, end=202410) 获取原始stw数据，stw表自带百升数
-6. get_str_data 获取原始str数据，配上sku百升数
-7. get_all_t1_t15_comb 从t1卖给t1.5的str数据中获取挂在t1下面的t1.5的组合
+core functions:  
+1. skucode 对应的百升数 get_sku_hl_mapping_table  
+2. skucode 和 Pcode 对应关系 get_sku_sap_wccs_code_mapping_table  
+3. 经销商的名字和对应关系：budtech_brewdat_prod_ods.abi_cloud_wholesaler_ws_wholesaler  
+4. 导入期初库存数据并且转换sku的百升数，filter需要的brand get_inv_data  
+5. get_stw_data(start=202101, end=202410) 获取原始stw数据，stw表自带百升数  
+6. get_str_data 获取原始str数据，配上sku百升数  
+7. get_all_t1_t15_comb 从t1卖给t1.5的str数据中获取挂在t1下面的t1.5的组合  
 select payercode as t15_code, sj_pay_to as t1_code  
         from finance_ds_inventory_dmt.finance_poc_datahub_mid_ws_wccs_str 
         where deleted = 0  
         group by all
-8. get_t15_stw_monthly_from_t1  计算t1.5从t1每个月的进货，by brand by t1.5ws
-9. get_t15_str_monthly  挂在t1下面的t1.5每月卖给售点的str的量
+8. get_t15_stw_monthly_from_t1  计算t1.5从t1每个月的进货，by brand by t1.5ws  
+9. get_t15_str_monthly  挂在t1下面的t1.5每月卖给售点的str的量  
 
 ### fifo_all_ws
 
