@@ -1,0 +1,20 @@
+t1_t15, v2025010301, outer join stw&str
+t1, v2025010301, outer join stw&str
+t1, v2025010302, defined ws and remove ws without str
+t1, v2025010302_no_str, defined ws and remove ws without str
+t1_t15, v2025010302, defined ws and remove ws without str
+t1_t15, v2025010302_no_str, defined ws and remove ws without str
+t1_t15, v20250107, 
+t1_t15, v20250107_no_str, 
+t15, v20250108, t15 sold to poc
+t15, v20250108_no_str, t15 sold to poc
+t1, v20250113, one ws one sku check
+t1, v20250114_no_str, qingbo add T2 sales of T1 in t1str
+t1_t15, v20250117, t1 t15 begin inv double count
+t1_t15, v20250117_no_str, t1 t15 begin inv double count
+t1_t15, v20250207, buse all(not only include HUNAN)
+t1_t15, v20250207_no_str, buse all(not only include HUNAN)
+t1, v20250207, buse all(not only include HUNAN)
+t1, v20250207_no_str, buse all(not only include HUNAN)
+t15, v20250207, buse all(not only include HUNAN)
+t15, v20250207_no_str, buse all(not only include HUNAN)
